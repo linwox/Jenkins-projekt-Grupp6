@@ -10,26 +10,38 @@ public class ShoppingCart {
         this.basket = new ArrayList<>();
     }
 
-    public void addProduct(Product item){
-        basket.add(item);
+    public void addProduct(Product item) {
+        if (basket.contains(item)) {
+            item.setQuantity(item.getQuantity() + 1);
+        } else {
+            basket.add(item);
+            item.setQuantity(item.getQuantity() + 1);
+        }
     }
 
-    public void removeProduct(Product item){
-     basket.remove(item);
+    public void removeProduct(Product item) {
+        if (item.getQuantity() > 1) {
+            item.setQuantity(item.getQuantity() - 1);
+        } else {
+            basket.remove(item);
+        }
     }
 
-    public double totalCost(){
+    public double calculateTotalCost() {
         double totalCost = 0;
-        for (Product product : basket) {
-            totalCost += product.calculatePricePerProduct();
+        for (Product item : basket) {
+            totalCost += item.calculatePricePerProduct();
         }
         return totalCost;
     }
 
-    public void showBasket(){
-        System.out.printf("Your order: %s", basket);
+    public void showBasket() {
+        System.out.printf("Your order: %n");
+        for (Product item : basket) {
+            System.out.printf("%d, %s, %d, %.2f%n", item.getProductId(), item.getName(), item.getQuantity(),
+                    item.calculatePricePerProduct());
+        }
+        System.out.printf("Total cost: %.2f%n", calculateTotalCost());
     }
 
 }
-
-
