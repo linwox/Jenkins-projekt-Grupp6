@@ -19,12 +19,24 @@ public class CustomerTest {
     }
 
     @Test
+    public void testValidName() {
+        Customer customer = new Customer("123456789012", "John Doe", "john@example.com");
+        assertNotNull(customer);
+        assertEquals("John Doe", customer.getFullName());
+    }
+    @Test
     public void testInvalidName() {
         assertThrows(IllegalArgumentException.class, () -> {
             new Customer("123456789012", "John", "john@example.com");
         });
     }
 
+    @Test
+    public void testValidEmail() {
+        Customer customer = new Customer("123456789012", "John Doe", "john@example.com");
+        assertNotNull(customer);
+        assertEquals("john@example.com", customer.getEmail());
+    }
     @Test
     public void testInvalidEmail() {
         assertThrows(IllegalArgumentException.class, () -> {
@@ -37,5 +49,14 @@ public class CustomerTest {
         Customer customer = new Customer("123456789012", "John Doe", "john@example.com");
         customer.changeEmail("john.doe@example.com");
         assertEquals("john.doe@example.com", customer.getEmail());
+    }
+
+    @Test
+    public void testPlaceOrder() {
+        Customer customer = new Customer("123456789012", "John Doe", "john@example.com");
+        ShoppingCart cart = new ShoppingCart();
+        customer.PlaceOrder(cart);
+
+        assertTrue(customer.getOrderHistory().contains(cart));
     }
 }

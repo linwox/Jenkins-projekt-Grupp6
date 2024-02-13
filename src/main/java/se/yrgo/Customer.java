@@ -13,6 +13,9 @@ public class Customer
     private String email;
 
     private List<ShoppingCart> orderHistory = new ArrayList<>();
+    public List<ShoppingCart> getOrderHistory() {
+        return orderHistory;
+    }
 
     public String getFullName()
     {
