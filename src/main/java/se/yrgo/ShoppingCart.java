@@ -3,6 +3,12 @@ package se.yrgo;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class holds the ShoppingCart object. Products are saved in the basket
+ * List.
+ * You can add and remove products from the basket List. And also calculate the
+ * total cost and show what's in the basket. 
+ */
 public class ShoppingCart {
     private List<Product> basket;
 
@@ -33,6 +39,9 @@ public class ShoppingCart {
         for (Product item : basket) {
             totalCost += item.calculatePricePerProduct();
         }
+        if (totalCost < 0) {
+            throw new IllegalArgumentException("Can not return money here. Contact employee.");
+        }
         return totalCost;
     }
 
@@ -48,7 +57,5 @@ public class ShoppingCart {
     public List<Product> getBasket() {
         return basket;
     }
-
-    
 
 }
