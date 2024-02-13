@@ -24,5 +24,10 @@ public class Main {
         basket1.removeProduct(extraCheese);
         
         basket1.showBasket();
+
+        Customer customer = new Customer("200305043426", "John Doe", "Johndoe@mail.com");
+        customer.PlaceOrder(basket1);
+        customer.PlaceOrder(basket1);
+        customer.ViewOrderHistory();
     }
 }
