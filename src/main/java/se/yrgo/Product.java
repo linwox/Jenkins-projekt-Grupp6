@@ -6,11 +6,11 @@ public class Product {
     private double unitPrice;
     private int quantity;
 
-    public Product(int productId, String name, double unitPrice, int quantity) {
+    public Product(int productId, String name, double unitPrice) {
         this.productId = productId;
         this.name = name;
         this.unitPrice = unitPrice;
-        this.quantity = quantity;
+        this.quantity = 0;
     }
 
     public int getProductId() {
@@ -27,6 +27,10 @@ public class Product {
 
     public int getQuantity() {
         return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public double calculatePricePerProduct() {
