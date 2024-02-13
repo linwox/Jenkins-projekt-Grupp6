@@ -40,6 +40,6 @@ public class Product {
     @Override
     public String toString() {
         return String.format("%d, %s, %.2f SEK, quantity: %d%n",
-                              productId, name, unitPrice, quantity);
+                productId, name, unitPrice, quantity);
     }
 }
