@@ -5,9 +5,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ShoppingCartTest {
 
-    ShoppingCart testShoppingCart = new ShoppingCart();
-    Product testProduct = new Product(1001, "Ketchup", 5.00);
-
     @Test
     public void testAddProductCartEmpty() {
         ShoppingCart testShoppingCart = new ShoppingCart();
@@ -46,6 +43,16 @@ public class ShoppingCartTest {
         testShoppingCart.removeProduct(testProduct);
         assertEquals(0, testShoppingCart.getBasket().size());
         assertEquals(0, testProduct.getQuantity());
+    }
+
+    @Test
+    public void testCalculateTotalCost() {
+        ShoppingCart testShoppingCart = new ShoppingCart();
+        Product testProduct1 = new Product(1001, "Ketchup", 5.00);
+        Product testProduct2 = new Product(1101, "McFlurry vanilla", 15.00);
+        testShoppingCart.addProduct(testProduct1);
+        testShoppingCart.addProduct(testProduct2);
+        assertEquals(20.00, testShoppingCart.calculateTotalCost());
     }
 
 }

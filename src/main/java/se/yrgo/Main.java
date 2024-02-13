@@ -16,13 +16,13 @@ public class Main {
         basket1.addProduct(cheeseBurger);
         basket1.addProduct(extraCheese);
         basket1.addProduct(extraCheese);
-        
+
         basket1.showBasket();
-        
+
         System.out.println();
 
         basket1.removeProduct(extraCheese);
-        
+
         basket1.showBasket();
 
         Customer customer = new Customer("200305043426", "John Doe", "Johndoe@mail.com");
