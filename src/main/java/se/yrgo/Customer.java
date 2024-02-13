@@ -67,7 +67,7 @@ public class Customer {
         this.email = email;
     }
 
-    public void ViewOrderHistory() {
+    public void viewOrderHistory() {
         System.out.println("Order history: ");
         int index = 1;
         for (ShoppingCart cart : orderHistory) {
@@ -79,9 +79,8 @@ public class Customer {
         }
     }
 
-    public void PlaceOrder(ShoppingCart cart) {
+    public void placeOrder(ShoppingCart cart) {
         System.out.println("Order placed successfully!");
-        cart.showBasket();
         orderHistory.add(cart);
     }
 }

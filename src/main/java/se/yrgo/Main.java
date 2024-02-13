@@ -1,9 +1,8 @@
 package se.yrgo;
 
-import java.sql.SQLOutput;
-
 public class Main {
     public static void main(String[] args) {
+        Customer customer = new Customer("200305043426", "John Doe", "Johndoe@mail.com");
         Product pepsiMax33 = new Product(1201, "Pepsi Max 33", 25.00);
         Product cheeseBurger = new Product(1303, "Cheeseburger", 48.00);
         Product mediumFries = new Product(1402, "Medium fries", 20.00);
@@ -25,9 +24,9 @@ public class Main {
 
         basket1.showBasket();
 
-        Customer customer = new Customer("200305043426", "John Doe", "Johndoe@mail.com");
-        customer.PlaceOrder(basket1);
-        customer.PlaceOrder(basket1);
-        customer.ViewOrderHistory();
+
+        customer.placeOrder(basket1);
+        System.out.println(" ");
+        customer.viewOrderHistory();
     }
 }

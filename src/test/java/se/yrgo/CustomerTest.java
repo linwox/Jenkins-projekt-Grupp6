@@ -55,7 +55,7 @@ public class CustomerTest {
     public void testPlaceOrder() {
         Customer customer = new Customer("123456789012", "John Doe", "john@example.com");
         ShoppingCart cart = new ShoppingCart();
-        customer.PlaceOrder(cart);
+        customer.placeOrder(cart);
 
         assertTrue(customer.getOrderHistory().contains(cart));
     }
