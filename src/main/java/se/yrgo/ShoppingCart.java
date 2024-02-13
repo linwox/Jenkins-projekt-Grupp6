@@ -23,6 +23,7 @@ public class ShoppingCart {
         if (item.getQuantity() > 1) {
             item.setQuantity(item.getQuantity() - 1);
         } else {
+            item.setQuantity(item.getQuantity() - 1);
             basket.remove(item);
         }
     }
@@ -43,5 +44,11 @@ public class ShoppingCart {
         }
         System.out.printf("Total cost: %.2f%n", calculateTotalCost());
     }
+
+    public List<Product> getBasket() {
+        return basket;
+    }
+
+    
 
 }
