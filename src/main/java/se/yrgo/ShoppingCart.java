@@ -33,6 +33,9 @@ public class ShoppingCart {
         for (Product item : basket) {
             totalCost += item.calculatePricePerProduct();
         }
+        if(totalCost < 0){
+            throw new IllegalArgumentException("Can not return money here. Contact employee.");
+        }
         return totalCost;
     }
 
