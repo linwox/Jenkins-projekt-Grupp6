@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * Represents a customer with a unique ID, full name, and email address.
+ * Contains methods for placing orders and viewing their history.
  */
 public class Customer 
 {
