@@ -4,6 +4,7 @@ import org.junit.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ShoppingCartTest {
+
     ShoppingCart testShoppingCart = new ShoppingCart();
     Product testProduct = new Product(1001, "Ketchup", 5.00);
 
@@ -46,4 +47,5 @@ public class ShoppingCartTest {
         assertEquals(0, testShoppingCart.getBasket().size());
         assertEquals(0, testProduct.getQuantity());
     }
+
 }
