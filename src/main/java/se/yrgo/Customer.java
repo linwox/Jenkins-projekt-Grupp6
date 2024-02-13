@@ -1,5 +1,8 @@
 package se.yrgo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Represents a customer with a unique ID, full name, and email address.
  */
@@ -8,6 +11,8 @@ public class Customer
     private String customerID;
     private String fullName;
     private String email;
+
+    private List<ShoppingCart> orderHistory = new ArrayList<>();
 
     public String getFullName()
     {
@@ -61,14 +66,25 @@ public class Customer
         this.email = email;
     }
 
-    void ViewOrderHistory()
+    public void ViewOrderHistory()
     {
-        throw new UnsupportedOperationException("Not supported yet."); // TO BE IMPLEMENTED
+        System.out.println("Order history: ");
+        int index = 1;
+        for (ShoppingCart cart : orderHistory)
+        {
+            System.out.println(index + ". ");
+            cart.showBasket();
+            System.out.printf("\n");
+
+            index++;
+        }
     }
 
-    void PlaceOrder()
+    public void PlaceOrder(ShoppingCart cart)
     {
-        throw new UnsupportedOperationException("Not supported yet."); // TO BE IMPLEMENTED
+        System.out.println("Order placed successfully!");
+        cart.showBasket();
+        orderHistory.add(cart);
     }
 }
 

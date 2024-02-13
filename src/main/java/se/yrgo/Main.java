@@ -25,5 +25,10 @@ public class Main {
         System.out.printf("Pris cheeseburgare: %.2f%n", cheeseBurger.calculatePricePerProduct());
         System.out.printf("Pris fries: %.2f%n", mediumFries.calculatePricePerProduct());
         System.out.printf("Pris extra ost: %.2f%n", extraCheese.calculatePricePerProduct());
+
+        // Adding Customers and their methods
+        Customer customer1 = new Customer("199912121234", "Sample Customer", "Samplecustomer@mail.com");
+        customer1.PlaceOrder(basket1);
+        customer1.ViewOrderHistory();
     }
 }
